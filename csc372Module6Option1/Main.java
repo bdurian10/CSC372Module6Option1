@@ -38,10 +38,7 @@ public class Main {
 		Student g = new Student(4, "Beth", "Miami");
 		Student h = new Student(3, "Ford", "Enterprise");
 		Student i = new Student(2, "Alice", "Pomona");
-		Student j = new Student(1, "Mary", "Wellspring");
-		
-		//Declare instances of sort classes
-		
+		Student j = new Student(1, "Mary", "Wellspring");		
 		
 		//add students to ArrayList
 		students.add(a);
