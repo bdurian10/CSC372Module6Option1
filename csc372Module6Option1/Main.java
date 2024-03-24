@@ -15,7 +15,6 @@ public class Main {
 			for(int j = i + 1; j < students.size(); j++) {
 				if(c.compare(students.get(indexSmallest), students.get(j)) > 0) {
 					indexSmallest = j;
-					System.out.println(students.get(j).getName() + " is smaller than " + students.get(i).getName());
 				}
 			}
 			//Swap smallest value of compared attribute with students.get(i)
