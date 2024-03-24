@@ -13,6 +13,8 @@ public class Main {
 		for(int i = 0; i < students.size() - 1; i++) {
 			indexSmallest = i;
 			for(int j = i + 1; j < students.size(); j++) {
+				//Compare Student at indexSmallest to Student at j
+				//If Student at j is smaller, set indexSmallest to j
 				if(c.compare(students.get(indexSmallest), students.get(j)) > 0) {
 					indexSmallest = j;
 				}
@@ -75,10 +77,7 @@ public class Main {
 		System.out.println("\nSorted by Name:");
 		for(Student student : students) {
 			System.out.println(student.toString());
-		}
-		
-		System.out.println(students.get(0).getName().compareTo(students.get(1).getName()));
-		
+		}	
 	}
 
 }
