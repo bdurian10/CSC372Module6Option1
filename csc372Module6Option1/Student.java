@@ -11,7 +11,6 @@ public class Student {
 		rollno = 0;
 		name = "";
 		address = "";
-		
 	}
 	
 	//parameterized constructor

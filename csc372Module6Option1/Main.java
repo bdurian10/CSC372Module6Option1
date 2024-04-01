@@ -5,13 +5,17 @@ import java.util.Comparator;
 
 public class Main {
 	
-	static int indexSmallest;	//stores index of smallest element
-	static Student temp;		//temporary variable for swap
-	
-	public static void sort(ArrayList<Student> students, Comparator<Student> c) {
+	public static void selectionSort(ArrayList<Student> students, Comparator<Student> c) {
+		
+		if(students == null || students.size() < 2) {
+			//If list is null or contains fewer than two elements, return without sorting
+			System.out.println("Error: Insufficient number of elements to sort.");
+			return;
+		}
+		
 		//Loop through students
 		for(int i = 0; i < students.size() - 1; i++) {
-			indexSmallest = i;
+			int indexSmallest = i;
 			for(int j = i + 1; j < students.size(); j++) {
 				//Compare Student at indexSmallest to Student at j
 				//If Student at j is smaller, set indexSmallest to j
@@ -20,7 +24,7 @@ public class Main {
 				}
 			}
 			//Swap smallest value of compared attribute with students.get(i)
-			temp = students.get(i);
+			Student temp = students.get(i);
 			students.set(i,  students.get(indexSmallest));
 			students.set(indexSmallest, temp);
 		}
@@ -28,7 +32,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		//Declare ArrayList and 10 Student objects
-		ArrayList<Student> students = new ArrayList<Student>();
+		ArrayList<Student> students = new ArrayList<>();
 		Student a = new Student(10, "John", "Denver");
 		Student b = new Student(9, "Marie", "Los Angeles");
 		Student c = new Student(8, "Clover", "Quebec");
@@ -59,7 +63,7 @@ public class Main {
 		}
 		
 		//Sort by rollno
-		sort(students, new RollnoSort());
+		selectionSort(students, new RollnoSort());
 		
 		//Print ArrayList sorted by rollno
 		System.out.println("\nSorted by Roll Number:");
@@ -68,7 +72,7 @@ public class Main {
 		}
 		
 		//Sort by name
-		sort(students, new NameSort());
+		selectionSort(students, new NameSort());
 		
 		//Print ArrayList Sorted by name
 		System.out.println("\nSorted by Name:");
